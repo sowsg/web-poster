@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+   <head>
+       <meta charset="utf-8">
+       <title></title>  
+    </head>
+    <style>
+           .circle {
+     position: absolute;
+      border-radius: 50%;
+      background: #1D1E23;
+      width: 560px;
+      height: 560px;
+      left: 440px;
+      top: 121px;
+               }
+        .animate__zoomOut {
+         animation-name: zoomOut;   
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+        
+            @keyframes zoomOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(.3);
+  }
+
+  100% {}
+  }
+
+        
+        .absolute-bg {
+position: absolute;
+top: 0;
+left: 0;
+z-index: 0;
+height: 100%;
+width: 100%;
+background-position: 50%;
+background-repeat: no-repeat;
+background-size: cover;
+overflow: hidden;
+/*}*/
+.fog {
+position: relative;
+height: 100vh;
+width: 100%;
+background-color: #000;
+}
+.fog__container {
+position: absolute;
+height: 100%;
+width: 100%;
+overflow: hidden;
+}
+        .fog__img {
+position: absolute;
+height: 100vh;
+width: 300vw;
+}
+.fog__img--first {
+background: url("images/fog-1%C2%A0%E2%80%94%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.png") repeat-x;
+background-size: contain;
+background-position: center;
+
+}
+.fog__img--second {
+background: url("images/fog-2%C2%A0%E2%80%94%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.png") repeat-x;
+background-size: contain;
+background-position: center;
+animation: marquee 40s linear infinite;
+}
+ @keyframes marquee {
+0% {
+transform: translate3d(0, 0, 0);
+}
+100% {
+transform: translate3d(-200vw, 0, 0);
+}
+}
+    </style>
+    <body bgcolor=#101010>
+   <div class="circle animate__zoomOut"></div>
+   
+<section class="fog">
+<figure class="absolute-bg" style="background-image: url('/1600x900');"></figure>
+<div class="fog__container">
+<div class="fog__img fog__img--first"></div>
+<div class="fog__img fog__img--second"></div>
+</div>
+</section>
+    </body>
+</html>
