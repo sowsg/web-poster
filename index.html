@@ -14,8 +14,11 @@
  position: fixed;
  width: 1440px;
  height: 900px;
+ left: 50%;
+ transform: translate(-50%);
         }
         
+/*ЭЛЕМЕНТЫ ПЛАКАТА*/
         p{
 font-family: DINPro; 
 position: absolute;
@@ -80,94 +83,227 @@ width: 1040px;
 
         }
         
-        .logo{
-    position: absolute;
-    width: 168px;
-    left: 630px;
-    top: 241px;
-            }
-        
-           .circle {
-                position: absolute; 
-                border-radius: 50%;
-                background: #1D1E23;
-                width: 1690px;
-                height: 1690px;
-                left: -130px;
-                top: -395px;
-/*                width: 560px;*/
 /*                height: 560px;*/
-/*                left: 440px;*/
-/*                top: 121px;*/
-                         }
-        
-        .ring1{
-position: absolute;
-width: 1690px;
-height: 1690px;
-border-radius: 50%;
-border: 8px solid #545454;
-box-sizing: border-box;
-        }
-        
-        .ring2{
-position: absolute;
-width: 1559px;
-height: 1559px;
-border-radius: 50%;
-border: 12px solid #545454;
-box-sizing: border-box;
-        }
-        .ring3{
-         position: absolute;
-width: 1381px;
-height: 1381px;
-border-radius: 50%;
-border: 8px solid #545454;
-box-sizing: border-box;   
-        }
-        
-/*        .hole {*/
+        /*    КОЛОДЕЦ   */
+    .hole {
       position: absolute;
       border-radius: 50%;
       background: #050505;
-      width: 560px;
-      height: 560px;
-      left: 440px;
-      top: 121px;  
+      width: 680px;
+      height: 680px;
+      left: 375px;
+      top: 86px;  
       box-shadow: -2px 1px 30px -5px rgba(236, 103, 58, 0.3);
         }
        
         .hole_ears {
       position: absolute;
       background: #050505;
-      width: 118px;
-      height: 600px;
-      left: 225px;
+      width: 140px;
+      height: 730px;
+      left: 275px;
       top: -20px;
       }
         
-/*        .animate__zoomOut {*/
-         animation-name: zoomOut;   
-            animation-duration: 4s;
-            animation-iteration-count: infinite;
+      /*КРЫШКА*/ 
+           .logo{
+                position: absolute;
+                width: 168px;
+                left: 630px;
+                top: 241px;
+            }
+        
+        .animate__fadeOut {
+  animation-name: fadeOut;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  }
+        
+        @keyframes fadeOut {
+  0% {opacity: 1; 
+  }
+
+  100% {
+    opacity: 0;transform: scale(0.5)
+  }
+}
+
+                         .circle {
+                position: relative;
+                border-radius: 50%;
+                width: 1700px;
+                height: 1700px;
+                margin: 0 auto;
+                background: #1D1E23;
+                left: -135px;
+                top: -424px;
+}
+                                 
+                      .animate__zoomOut {
+         animation-name: zoomOut;    
+         animation-duration: 4s;
+         animation-iteration-count: 1;
+         animation-fill-mode: forwards;
         }
         
-/*            @keyframes zoomOut {*/
+            @keyframes zoomOut {
+  0% {opacity: 1; transform: scale(1);
+  }
+
+  50% {transform: scale(.4);
+    }
+
+  100% {transform: scale(.4);}
+      }
+        
+/*           @keyframes rotate-top {*/
   0% {
-    opacity: 1;
-    transform: scale(1);
+    transform: rotate(0);
+    transform-origin: top;
   }
+  100% {
+    transform: rotate(360deg);
+    transform-origin: top;
+  }
+}
 
-  50% {
-    transform: scale(.3);
-  }
+                         .ring1{
+                position: absolute;
+                width: 1690px;
+                height: 1690px;
+                border-radius: 50%;
+                border: 8px solid #545454;
+                box-sizing: border-box;
+                margin:auto;
+                top:0;
+                right:0;
+                bottom:0;
+                left:0;
+                               }
+                      
+                      .ring2{
+                position: absolute;
+                width: 1559px;
+                height: 1559px;
+                margin:auto;
+                top:0;
+                right:0;
+                bottom:0;
+                left:0;           
+                border-radius: 50%;
+                border: 8px solid #545454;
+                box-sizing: border-box;
+                            }
+        
+                      .ring3{
+                position: absolute;
+                width: 1381px;
+                height: 1381px;
+                border-radius: 50%;
+                border: 8px solid #545454;
+                box-sizing: border-box;   
+                margin:auto;
+                top:0;
+                right:0;
+                bottom:0;
+                left:0;
+                      }
+                      
+                      .ring4{
+                position: absolute;
+                width: 1208px;
+                height: 1208px;
+                border-radius: 50%;
+                border: 8px solid #545454;
+                box-sizing: border-box;   
+                margin:auto;
+                top:0;
+                right:0;
+                bottom:0;
+                left:0; 
+                      }
+                      
+                      .ring5{
+                position: absolute;
+                width: 1033px;
+                height: 1033px;
+                border-radius: 50%;
+                border: 8px solid #545454;
+                box-sizing: border-box;   
+                margin:auto;
+                top:0;
+                right:0;
+                bottom:0;
+                left:0;    
+                      }
+                     
+                      .ring6{
+                position: absolute;
+                width: 844px;
+                height: 844px;
+                border-radius: 50%;
+                border: 8px solid #545454;
+                box-sizing: border-box;   
+                margin:auto;
+                top:0;
+                right:0;
+                bottom:0;
+                left:0;      
+                      }
+                      
+                      .ring7{
+                position: absolute;
+                width: 665px;
+                height: 665px;
+                border-radius: 50%;
+                border: 8px solid #545454;
+                box-sizing: border-box;   
+                margin:auto;
+                top:0;
+                right:0;
+                bottom:0;
+                left:0;       
+                      }
+        
+/*                      .ring_ear1{*/
+                position: absolute;
+                width: 118px;
+                height: 432.92px;
+                left: 225px;
+                top: -482.81px;
+                background: #1D1E23;
+                border: 12px solid #545454;
+                box-sizing: border-box;
+                transform: rotate(90.02deg);
+                        }
+/*                        .ring_ear2{*/
+                position: absolute;
+                width: 118px;
+                height: 432.92px;
+                left: 225px;
+                top: 1244.06px;
+                background: #1D1E23;
+                border: 12px solid #545454;
+                box-sizing: border-box;
+                transform: rotate(90.02deg);  
+                        }
+        .ring_ear1{
+      position: absolute;
+      background: #1D1E23;
+      border: 12px solid #545454;
+      box-sizing: border-box;
+      width: 140px;
+      height: 730px;
+      left: 275px;
+      top: -20px;  
+            transform: rotate(90.02deg);
+        }
+        
 
-  100% {}
-  }
 
         
-/*        .absolute-bg {*/
+        .absolute-bg {
 position: absolute;
 top: 0;
 left: 0;
@@ -178,63 +314,78 @@ background-position: 50%;
 background-repeat: no-repeat;
 background-size: cover;
 overflow: hidden;
-/*}*/
-/*.fog {*/
+}
+.fog {
 position: relative;
 height: 100vh;
 width: 100%;
 background-color: #000;
 }
-/*.fog__container {*/
+.fog__container {
 position: absolute;
 height: 100%;
 width: 100%;
 overflow: hidden;
 }
-/*        .fog__img {*/
+        .fog__img {
 position: absolute;
 height: 100vh;
 width: 300vw;
 }
-/*.fog__img--first {*/
+.fog__img--first {
 background: url("images/fog-1%C2%A0%E2%80%94%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.png") repeat-x;
 background-size: contain;
 background-position: center;
 
 }
-/*.fog__img--second {*/
+        .fog__img--second {
 background: url("images/fog-2%C2%A0%E2%80%94%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.png") repeat-x;
 background-size: contain;
 background-position: center;
 animation: marquee 40s linear infinite;
-        
-/* @keyframes marquee {*/
+      }  
+    @keyframes marquee {
 0% {
 transform: translate3d(0, 0, 0);
 }
 100% {
 transform: translate3d(-200vw, 0, 0);
 }
-
+    }
     </style>
-     <body bgcolor=#101010>
-     
-<!--КОЛОДЕЦ АНИМАЦИИ-->
-<div class="container">
-    <div class="circle animate__zoomOut">
-     <div class="ring1"></div>
-     <div class="ring2"></div>
-     <div class="ring3"></div>
-     <div class="ring4"></div>
-     <div class="ring5"></div>
-     <div class="ring6"></div>
-     <div class="ring7"></div>
-     <div class="ring_ears"></div>
-    </div>
-<img class="logo" src="images/Asset%205@20x%201.png">
+    
+<body bgcolor=#101010>
+   
+    <div class="container">
+  <!--КОЛОДЕЦ-->
      <div class="hole animate__zoomIn"> 
      <div class="hole_ears"></div>
+     </div> 
+   <!--КРЫШКА-->
+    <div class="circle animate__zoomOut">
+     <div class="ring1">
+         <div class="ring2">
+             <div class="ring3">
+                 <div class="ring4">
+                     <div class="ring5">
+                         <div class="ring6">
+                             <div class="ring7">
+                                 <div class="ring_ear1"></div>
+                                 <div class="ring_ear2"></div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
      </div>
+    </div>
+<img class="logo animate__fadeOut" src="images/Asset%205@20x%201.png">
+    
+<!--КОЛОДЕЦ-->
+<!--     <div class="hole animate__zoomIn"> -->
+<!--     <div class="hole_ears"></div>-->
+<!--     </div>-->
         
 <!--ЭЛЕМЕНТЫ ПЛАКАТА-->
 <!--    <p>пер.Трубный,2с1</p>-->
@@ -245,13 +396,13 @@ transform: translate3d(-200vw, 0, 0);
 <!--    <img class="tube" src="images/Asset%2015@20x%201.png">-->
 
 <!--ТУМАН-->
-<section class="fog">
- <figure class="absolute-bg" style="background-image: url('/1600x900');"></figure>
- <div class="fog__container">
-        <div class="fog__img fog__img--first"></div>
-        <div class="fog__img fog__img--second"></div>
- </div>
-</section>
+<!--<section class="fog">-->
+<!-- <figure class="absolute-bg" style="background-image: url('/1600x900');"></figure>-->
+<!--<div class="fog__container">-->-->
+<!--        <div class="fog__img fog__img--first"></div>-->
+<!--        <div class="fog__img fog__img--second"></div>-->
+<!-- </div>-->
+<!--</section>-->
         </div>
     </body>
 </html>
