@@ -1,12 +1,4 @@
-<!DOCTYPE HTML>
-<html lang="en" dir="ltr">
-   <head>
-       <meta charset="utf-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1">
-       <title></title>  
-    </head>
-    <style>
-        @font-face {
+@font-face {
     font-family: 'DINPro'; 
     src: url('fonts/DINPro-regular.otf'); 
    }
@@ -77,7 +69,6 @@ top: 132px;
         .tube{
 position: absolute;
 width: 1040px;
-
         }
         
         .logo{
@@ -91,43 +82,13 @@ width: 1040px;
                 position: absolute; 
                 border-radius: 50%;
                 background: #1D1E23;
-                width: 1690px;
-                height: 1690px;
-                left: -130px;
-                top: -395px;
-/*                width: 560px;*/
-/*                height: 560px;*/
-/*                left: 440px;*/
-/*                top: 121px;*/
+                width: 560px;
+                height: 560px;
+                left: 440px;
+                top: 121px;
                          }
         
-        .ring1{
-position: absolute;
-width: 1690px;
-height: 1690px;
-border-radius: 50%;
-border: 8px solid #545454;
-box-sizing: border-box;
-        }
-        
-        .ring2{
-position: absolute;
-width: 1559px;
-height: 1559px;
-border-radius: 50%;
-border: 12px solid #545454;
-box-sizing: border-box;
-        }
-        .ring3{
-         position: absolute;
-width: 1381px;
-height: 1381px;
-border-radius: 50%;
-border: 8px solid #545454;
-box-sizing: border-box;   
-        }
-        
-/*        .hole {*/
+        .hole {
       position: absolute;
       border-radius: 50%;
       background: #050505;
@@ -138,7 +99,7 @@ box-sizing: border-box;
       box-shadow: -2px 1px 30px -5px rgba(236, 103, 58, 0.3);
         }
        
-        .hole_ears {
+        .ears {
       position: absolute;
       background: #050505;
       width: 118px;
@@ -207,7 +168,7 @@ background: url("images/fog-2%C2%A0%E2%80%94%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.pn
 background-size: contain;
 background-position: center;
 animation: marquee 40s linear infinite;
-        
+}
 /* @keyframes marquee {*/
 0% {
 transform: translate3d(0, 0, 0);
@@ -215,43 +176,4 @@ transform: translate3d(0, 0, 0);
 100% {
 transform: translate3d(-200vw, 0, 0);
 }
-
-    </style>
-     <body bgcolor=#101010>
-     
-<!--КОЛОДЕЦ АНИМАЦИИ-->
-<div class="container">
-    <div class="circle animate__zoomOut">
-     <div class="ring1"></div>
-     <div class="ring2"></div>
-     <div class="ring3"></div>
-     <div class="ring4"></div>
-     <div class="ring5"></div>
-     <div class="ring6"></div>
-     <div class="ring7"></div>
-     <div class="ring_ears"></div>
-    </div>
-<img class="logo" src="images/Asset%205@20x%201.png">
-     <div class="hole animate__zoomIn"> 
-     <div class="hole_ears"></div>
-     </div>
-        
-<!--ЭЛЕМЕНТЫ ПЛАКАТА-->
-<!--    <p>пер.Трубный,2с1</p>-->
-<!--    <p>Арт-пространство</p>-->
-<!--    <p>BUDINA</p>-->
-<!--    <p>КАК ВЕРНУТЬ ВДОХНОВЕНИЕ?</p>-->
-<!--    <img class="time" src="images/9_00.png">-->
-<!--    <img class="tube" src="images/Asset%2015@20x%201.png">-->
-
-<!--ТУМАН-->
-<section class="fog">
- <figure class="absolute-bg" style="background-image: url('/1600x900');"></figure>
- <div class="fog__container">
-        <div class="fog__img fog__img--first"></div>
-        <div class="fog__img fog__img--second"></div>
- </div>
-</section>
-        </div>
-    </body>
-</html>
+}
