@@ -418,7 +418,6 @@ overflow: hidden;
 position: relative;
 height: 100vh;
 width: 100%;
-/*background-color: #000;*/
 }
 .fog__container {
 position: absolute;
@@ -435,23 +434,41 @@ width: 300vw;
 background: url("css/images/fog-1%C2%A0%E2%80%94%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.png") repeat-x;
 background-size: contain;
 background-position: center;
-animation: marquee 60s linear infinite;
+animation: marquee 40s linear infinite;
 }
         .fog__img--second {
 background: url("css/images/fog-2%C2%A0%E2%80%94%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.png") repeat-x;
 background-size: contain;
 background-position: center;
+            animation: fog2 40s linear backwards;
       }  
            @keyframes marquee {
 0% {
--webkit-transform: translate3d(0, 0, 0);
 transform: translate3d(0, 0, 0);
 }
+               5%{opacity:0,2; }
+               10%{opacity:0,2; }
+              25%{opacity: 0;}
+              50%{opacity: 0;}
+              75%{opacity: 0;}
 100% {
--webkit-transform: translate3d(-200vw, 0, 0);
-transform: translate3d(-200vw, 0, 0);
+transform: translate3d(-200vw, 0, 0); opacity:0;
 }
 }
+
+        @keyframes fog2{
+0% {
+transform: translate3d(0, 0, 0);
+}
+               5%{opacity:0,2; }
+               10%{opacity:0,2; }
+              25%{opacity: 0;}
+              50%{opacity: 0;}
+              75%{opacity: 0;}
+100% {
+transform: translate3d(-200vw, 0, 0); opacity:0;
+}
+}       
 
     </style>
     
@@ -495,6 +512,7 @@ transform: translate3d(-200vw, 0, 0);
   <p>КАК ВЕРНУТЬ ВДОХНОВЕНИЕ?</p>
        <img class="time" src="css/images/9_00.png">
         </div>
+        
         <!--ТУМАН-->
         <section class="fog">
 <figure class="absolute-bg"></figure>
@@ -503,12 +521,5 @@ transform: translate3d(-200vw, 0, 0);
 <div class="fog__img fog__img--second"></div>
 </div>
 </section>
-<!--<section class="fog">-->
-<!--<figure class="absolute-bg"></figure>-->
-<!--<div class="fog__container">-->
-<!--        <div class="fog__img fog__img--first"></div>-->
-<!--        <div class="fog__img fog__img--second"></div>-->
-<!-- </div>-->
-<!--</section>-->
     </body>
 </html>
