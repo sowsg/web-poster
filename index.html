@@ -2,14 +2,15 @@
 <html lang="en" dir="ltr">
    <head>
        <meta charset="utf-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <meta name="viewport" content="width=device-width">
        <title></title>  
     </head>
     <style>
         @font-face {
-    font-family: 'DINPro'; 
-    src: url('fonts/DINPro-regular.otf'); 
+    font-family: DINPro; 
+    src: url(css/fonts/DINPro-regular.otf); 
    }
+        
         .container {
  position: fixed;
  width: 1440px;
@@ -18,10 +19,13 @@
  transform: translate(-50%);
         }
         
-/*ЭЛЕМЕНТЫ ПЛАКАТА*/
+                                                            /*ЭЛЕМЕНТЫ ПЛАКАТА*/
         p{
-font-family: DINPro; 
+font-family: DINPro;
 position: absolute;
+color: #FFFFFF;    
+        }
+        p{
 margin: 0;
 width: 227px;
 height: 36px;
@@ -29,12 +33,8 @@ left: 129px;
 top: 713px;
 font-size: 28px;
 line-height: 36px;
-color: #FFFFFF;
-         }
-        
+         }    
         p+p{
-font-family: DINPro; 
-position: absolute;
 margin: 0;
 width: 274px;
 height: 36px;
@@ -42,32 +42,54 @@ left: 1058px;
 top: 713px;
 font-size: 28px;
 line-height: 36px;
-color: #FFFFFF;
            }
-        
         p+p+p{
-position: absolute;
 width: 604px;
 height: 210px;
 left: 116px;
 top: 68px;
 font-weight: 500;
 font-size: 163px;
-line-height: 210px;
-color: #FFFFFF;      
+line-height: 210px;      
         }
-        
-        p+p+p+p{
+        .appearing+p{
+font-family: DINPro;
 position: absolute;
+color: #FFFFFF; 
 width: 381px;
-height: 124px;
 left: 129px;
 top: 296px;
 font-weight: 500;
 font-size: 48px;
 line-height: 62px;
-color: #FFFFFF;
-        }
+animation: disappear-2 10s, slide-rotate-ver-left 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 10s forwards;
+            }
+          @keyframes disappear-2 {
+            0%{opacity: 0;}
+            100%{opacity: 0;}
+                    }   
+          @keyframes slide-rotate-ver-left {
+            0% {
+              transform: translateX(-150px) rotateY(90deg);
+            }
+            100% {
+              transform: translateX(0) rotateY(0);
+            }
+            }
+      
+.appearing{
+            animation: text-focus-in 8s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1 forwards;
+        } 
+        
+@keyframes text-focus-in {
+  0% {
+      filter: blur(10px);
+  }
+  100% {
+      filter: blur(0px);
+    opacity: 1;
+  }
+}
         
         .time{
 position: absolute;
@@ -75,16 +97,164 @@ width: 883.44px;
 height: 547.98px;
 left: 591px;
 top: 132px;
+animation: Disappear 10s 1 ,text-flicker-in-glow 4s ease-out 1 10s forwards;
 }
         
+@keyframes Disappear {
+0%{opacity: 0;}
+100%{opacity: 0;}
+        }
+        
+@keyframes text-flicker-in-glow {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  10.1% {
+    opacity: 1;
+    text-shadow: none;
+  }
+  10.2% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  20% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  20.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+  }
+  20.6% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  30% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  30.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  30.5% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  30.6% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  45% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  45.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  55% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  55.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  57% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  57.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+  }
+  60% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+  }
+  60.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  65% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  65.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  75% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  75.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  77% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  77.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  85% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  85.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  86% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  86.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+}
+
         .tube{
 position: absolute;
 width: 1040px;
-
+bottom: 50px;
+background: url(Asset 15@20x.png);
+animation: Disappear-3 10s, slide-in-bck-left 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 10s forwards;
+        }
+         @keyframes Disappear-3 {
+            0%{opacity: 0;}
+            100%{opacity: 0;}
         }
         
-/*                height: 560px;*/
-        /*    КОЛОДЕЦ   */
+        @keyframes slide-in-bck-left {
+  0% {
+    transform: translateZ(700px) translateX(-400px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0) translateX(0);
+    opacity: 1;
+  }
+}
+    
+                                                    /*    КОЛОДЕЦ   */
     .hole {
       position: absolute;
       border-radius: 50%;
@@ -94,42 +264,68 @@ width: 1040px;
       left: 375px;
       top: 86px;  
       box-shadow: -2px 1px 30px -5px rgba(236, 103, 58, 0.3);
+      animation: zoomIn 6s cubic-bezier(0.42,0,1,1) 1 6s forwards; 
         }
-       
-        .hole_ears {
+        
+        @keyframes zoomIn {
+  0% {
+    transform-origin: inherit;
+  }
+
+  50% {
+     transform: scale(4); 
+  }
+  100%{
+       transform: scale(4);          
+            }
+}
+     .hole_ears {
       position: absolute;
       background: #050505;
-      width: 140px;
-      height: 730px;
-      left: 275px;
+      width: 174px;
+      height: 710px;
+      left: 255px;
       top: -20px;
       }
         
-      /*КРЫШКА*/ 
-           .logo{
-                position: absolute;
-                width: 168px;
-                left: 630px;
-                top: 241px;
-            }
-        
-        .animate__fadeOut {
-  animation-name: fadeOut;
-  animation-duration: 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  }
-        
-        @keyframes fadeOut {
-  0% {opacity: 1; 
-  }
-
-  100% {
-    opacity: 0;transform: scale(0.5)
-  }
-}
-
-                         .circle {
+                                                        /*КРЫШКА*/ 
+.ring_ear{
+           position: absolute;
+           width: 428px;
+           height: 1800px;
+           left: 500px;
+                    top:-470px;
+           background: #1D1E23;
+           border: 12px solid #545454;
+           box-sizing: border-box;
+           animation: zoomOut 4s ease 1 1s forwards, slideOutUp 4s 1 3s forwards; 
+        }
+                     @keyframes zoomOut {
+                        0% {opacity: 1; transform: scale(1);
+                        }
+                        50% {transform: scale(.4);
+                          }
+                        100% {transform: scale(.4);}
+                            }
+                      
+                                 @keyframes slideOutUp {
+                        0% {
+                         transform-origin: inherit;
+                         transform: translateY(0) scale(.4);
+                         }
+                        100% {
+                          transform: translateY(-800px) scale(.4) rotate(180deg);
+                           transform-origin: inherit; }
+                              }
+.logo{
+          position: absolute;
+          width: 168px;
+          left: 630px;
+          top: 241px;
+          animation: fadeOut 2s 1 1s forwards;
+         }
+                        @keyframes fadeOut {0% {opacity: 1; }100% {opacity: 0;transform: scale(0.5)}}
+.circle {
                 position: relative;
                 border-radius: 50%;
                 width: 1700px;
@@ -138,175 +334,79 @@ width: 1040px;
                 background: #1D1E23;
                 left: -135px;
                 top: -424px;
-}
-                                 
-                      .animate__zoomOut {
-         animation-name: zoomOut;    
-         animation-duration: 4s;
-         animation-iteration-count: 1;
-         animation-fill-mode: forwards;
+                animation: zoomOut 4s ease 1 1s forwards, slideOutUp 4s 1 3s forwards;}
+                        @keyframes zoomOut {
+                         0% {opacity: 1; transform: scale(1);
+                         }
+                         50% {transform: scale(.4);
+                           }
+                         100% {transform: scale(.4);}
+                             }
+
+                       @keyframes slideOutUp {
+                          0% {
+                           transform-origin: inherit;
+                           transform: translateY(0) scale(.4);
+                           }
+                          100% {
+                            transform: translateY(-800px) scale(.4) rotate(180deg);
+                             transform-origin: inherit; }
+                                }
+
+.ring1, .ring2, .ring3, .ring4, .ring5, .ring6, .ring7{
+                 position: absolute;
+                 border-radius: 50%;
+                 border: 8px solid #545454;
+                 box-sizing: border-box;
+                 margin:auto;
+                 top:0;
+                 right:0;
+                 bottom:0;
+                 left:0;  
+                         }
+                      .ring1{
+         width: 1690px;
+         height: 1690px;
         }
         
-            @keyframes zoomOut {
-  0% {opacity: 1; transform: scale(1);
-  }
-
-  50% {transform: scale(.4);
-    }
-
-  100% {transform: scale(.4);}
-      }
-        
-/*           @keyframes rotate-top {*/
-  0% {
-    transform: rotate(0);
-    transform-origin: top;
-  }
-  100% {
-    transform: rotate(360deg);
-    transform-origin: top;
-  }
-}
-
-                         .ring1{
-                position: absolute;
-                width: 1690px;
-                height: 1690px;
-                border-radius: 50%;
-                border: 8px solid #545454;
-                box-sizing: border-box;
-                margin:auto;
-                top:0;
-                right:0;
-                bottom:0;
-                left:0;
-                               }
-                      
                       .ring2{
-                position: absolute;
-                width: 1559px;
-                height: 1559px;
-                margin:auto;
-                top:0;
-                right:0;
-                bottom:0;
-                left:0;           
-                border-radius: 50%;
-                border: 8px solid #545454;
-                box-sizing: border-box;
-                            }
+         width: 1559px;
+         height: 1559px;  
+               }
         
                       .ring3{
-                position: absolute;
-                width: 1381px;
-                height: 1381px;
-                border-radius: 50%;
-                border: 8px solid #545454;
-                box-sizing: border-box;   
-                margin:auto;
-                top:0;
-                right:0;
-                bottom:0;
-                left:0;
-                      }
+         width: 1381px;
+         height: 1381px;
+               }
                       
                       .ring4{
-                position: absolute;
-                width: 1208px;
-                height: 1208px;
-                border-radius: 50%;
-                border: 8px solid #545454;
-                box-sizing: border-box;   
-                margin:auto;
-                top:0;
-                right:0;
-                bottom:0;
-                left:0; 
-                      }
+         width: 1208px;
+         height: 1208px;
+               }
                       
-                      .ring5{
-                position: absolute;
-                width: 1033px;
-                height: 1033px;
-                border-radius: 50%;
-                border: 8px solid #545454;
-                box-sizing: border-box;   
-                margin:auto;
-                top:0;
-                right:0;
-                bottom:0;
-                left:0;    
-                      }
+                      .ring5{   
+         width: 1033px;
+         height: 1033px;
+               }
                      
-                      .ring6{
-                position: absolute;
-                width: 844px;
-                height: 844px;
-                border-radius: 50%;
-                border: 8px solid #545454;
-                box-sizing: border-box;   
-                margin:auto;
-                top:0;
-                right:0;
-                bottom:0;
-                left:0;      
-                      }
+                      .ring6{      
+         width: 844px;
+         height: 844px;
+               }
                       
                       .ring7{
-                position: absolute;
-                width: 665px;
-                height: 665px;
-                border-radius: 50%;
-                border: 8px solid #545454;
-                box-sizing: border-box;   
-                margin:auto;
-                top:0;
-                right:0;
-                bottom:0;
-                left:0;       
-                      }
-        
-/*                      .ring_ear1{*/
-                position: absolute;
-                width: 118px;
-                height: 432.92px;
-                left: 225px;
-                top: -482.81px;
-                background: #1D1E23;
-                border: 12px solid #545454;
-                box-sizing: border-box;
-                transform: rotate(90.02deg);
-                        }
-/*                        .ring_ear2{*/
-                position: absolute;
-                width: 118px;
-                height: 432.92px;
-                left: 225px;
-                top: 1244.06px;
-                background: #1D1E23;
-                border: 12px solid #545454;
-                box-sizing: border-box;
-                transform: rotate(90.02deg);  
-                        }
-        .ring_ear1{
-      position: absolute;
-      background: #1D1E23;
-      border: 12px solid #545454;
-      box-sizing: border-box;
-      width: 140px;
-      height: 730px;
-      left: 275px;
-      top: -20px;  
-            transform: rotate(90.02deg);
-        }
+         width: 665px;
+         height: 665px;
+               }
         
 
-
+                                                                    /*ТУМАН*/
         
-        .absolute-bg {
+.absolute-bg {
+    color:#101010; 
 position: absolute;
-top: 0;
-left: 0;
+top: -20px;
+left: -20px;
 z-index: 0;
 height: 100%;
 width: 100%;
@@ -317,9 +417,8 @@ overflow: hidden;
 }
 .fog {
 position: relative;
-height: 100vh;
-width: 100%;
-background-color: #000;
+height: 900px;
+width: 1440px;
 }
 .fog__container {
 position: absolute;
@@ -342,27 +441,31 @@ background-position: center;
 background: url("images/fog-2%C2%A0%E2%80%94%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.png") repeat-x;
 background-size: contain;
 background-position: center;
-animation: marquee 40s linear infinite;
+animation: marquee 40s linear inherit;
       }  
-    @keyframes marquee {
-0% {
-transform: translate3d(0, 0, 0);
-}
-100% {
-transform: translate3d(-200vw, 0, 0);
-}
-    }
+            @keyframes marquee {
+                0% {
+                transform: translate3d(0, 0, 0);
+                }
+                100% {
+                transform: translate3d(-200vw, 0, 0);
+/*                    opacity: 0;*/
+                }
+                    }
     </style>
     
 <body bgcolor=#101010>
    
     <div class="container">
+    
   <!--КОЛОДЕЦ-->
      <div class="hole animate__zoomIn"> 
      <div class="hole_ears"></div>
      </div> 
+     
    <!--КРЫШКА-->
-    <div class="circle animate__zoomOut">
+   <div class="ring_ear"></div>
+    <div class="circle">
      <div class="ring1">
          <div class="ring2">
              <div class="ring3">
@@ -370,8 +473,8 @@ transform: translate3d(-200vw, 0, 0);
                      <div class="ring5">
                          <div class="ring6">
                              <div class="ring7">
-                                 <div class="ring_ear1"></div>
-                                 <div class="ring_ear2"></div>
+
+
                              </div>
                          </div>
                      </div>
@@ -379,30 +482,28 @@ transform: translate3d(-200vw, 0, 0);
              </div>
          </div>
      </div>
-    </div>
-<img class="logo animate__fadeOut" src="images/Asset%205@20x%201.png">
-    
-<!--КОЛОДЕЦ-->
-<!--     <div class="hole animate__zoomIn"> -->
-<!--     <div class="hole_ears"></div>-->
-<!--     </div>-->
+     </div>
+     
+<img class="logo" src="css/images/Asset%205@20x%201.png">
         
 <!--ЭЛЕМЕНТЫ ПЛАКАТА-->
-<!--    <p>пер.Трубный,2с1</p>-->
-<!--    <p>Арт-пространство</p>-->
-<!--    <p>BUDINA</p>-->
-<!--    <p>КАК ВЕРНУТЬ ВДОХНОВЕНИЕ?</p>-->
-<!--    <img class="time" src="images/9_00.png">-->
-<!--    <img class="tube" src="images/Asset%2015@20x%201.png">-->
-
-<!--ТУМАН-->
-<!--<section class="fog">-->
-<!-- <figure class="absolute-bg" style="background-image: url('/1600x900');"></figure>-->
-<!--<div class="fog__container">-->-->
-<!--        <div class="fog__img fog__img--first"></div>-->
-<!--        <div class="fog__img fog__img--second"></div>-->
-<!-- </div>-->
-<!--</section>-->
+       <img class="tube" src="css/images/Asset%2015@20x%201.png">
+       <div class="appearing">
+        <p>пер.Трубный,2с1</p>
+        <p>Арт-пространство</p>
+        <p>BUDINA</p>
         </div>
+  <p>КАК ВЕРНУТЬ ВДОХНОВЕНИЕ?</p>
+       <img class="time" src="css/images/9_00.png">
+        </div>
+        
+        <!--ТУМАН-->
+<section class="fog">
+<figure class="absolute-bg"></figure>
+<div class="fog__container">
+        <div class="fog__img fog__img--first"></div>
+        <div class="fog__img fog__img--second"></div>
+ </div>
+</section>
     </body>
 </html>
