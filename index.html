@@ -403,10 +403,9 @@ animation: Disappear-3 10s, slide-in-bck-left 2s cubic-bezier(0.250, 0.460, 0.45
                                                                     /*ТУМАН*/
         
 .absolute-bg {
-    color:#101010; 
 position: absolute;
-top: -20px;
-left: -20px;
+top: 0;
+left: 0;
 z-index: 0;
 height: 100%;
 width: 100%;
@@ -417,8 +416,9 @@ overflow: hidden;
 }
 .fog {
 position: relative;
-height: 900px;
-width: 1440px;
+height: 100vh;
+width: 100%;
+/*background-color: #000;*/
 }
 .fog__container {
 position: absolute;
@@ -432,32 +432,31 @@ height: 100vh;
 width: 300vw;
 }
 .fog__img--first {
-background: url("images/fog-1%C2%A0%E2%80%94%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.png") repeat-x;
+background: url("css/images/fog-1%C2%A0%E2%80%94%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.png") repeat-x;
 background-size: contain;
 background-position: center;
-
+animation: marquee 60s linear infinite;
 }
         .fog__img--second {
-background: url("images/fog-2%C2%A0%E2%80%94%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.png") repeat-x;
+background: url("css/images/fog-2%C2%A0%E2%80%94%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.png") repeat-x;
 background-size: contain;
 background-position: center;
-animation: marquee 40s linear inherit;
       }  
-            @keyframes marquee {
-                0% {
-                transform: translate3d(0, 0, 0);
-                }
-                100% {
-                transform: translate3d(-200vw, 0, 0);
-/*                    opacity: 0;*/
-                }
-                    }
+           @keyframes marquee {
+0% {
+-webkit-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);
+}
+100% {
+-webkit-transform: translate3d(-200vw, 0, 0);
+transform: translate3d(-200vw, 0, 0);
+}
+}
+
     </style>
     
 <body bgcolor=#101010>
-   
     <div class="container">
-    
   <!--КОЛОДЕЦ-->
      <div class="hole animate__zoomIn"> 
      <div class="hole_ears"></div>
@@ -496,14 +495,20 @@ animation: marquee 40s linear inherit;
   <p>КАК ВЕРНУТЬ ВДОХНОВЕНИЕ?</p>
        <img class="time" src="css/images/9_00.png">
         </div>
-        
         <!--ТУМАН-->
-<section class="fog">
+        <section class="fog">
 <figure class="absolute-bg"></figure>
 <div class="fog__container">
-        <div class="fog__img fog__img--first"></div>
-        <div class="fog__img fog__img--second"></div>
- </div>
+<div class="fog__img fog__img--first"></div>
+<div class="fog__img fog__img--second"></div>
+</div>
 </section>
+<!--<section class="fog">-->
+<!--<figure class="absolute-bg"></figure>-->
+<!--<div class="fog__container">-->
+<!--        <div class="fog__img fog__img--first"></div>-->
+<!--        <div class="fog__img fog__img--second"></div>-->
+<!-- </div>-->
+<!--</section>-->
     </body>
 </html>
